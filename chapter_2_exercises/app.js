@@ -43,7 +43,7 @@ const fizzBuzz = () => {
  * 
  * @function createChessBoard
  */
-function createChessBoard() {
+const createChessBoard = () => {
     let size = Number(prompt("Enter a board size!"));
     let content = document.getElementById("content");
     let board = '';
@@ -64,3 +64,7 @@ function createChessBoard() {
     // Output the final board
     content.innerHTML = board;
 };
+
+const clearPage = () => {
+    content.innerHTML = '';
+}
