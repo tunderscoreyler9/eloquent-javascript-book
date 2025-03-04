@@ -40,19 +40,19 @@ const min = (a, b) => {
 // Write a function called countBs that takes a string as its only argument and returns a number that indicates 
 // how many uppercase B characters there are in the string.
 
-let countBs = str => {
-    let b_count = 0;
-    if(typeof str != 'string') {
-        return "Please enter a string";
-    } else {
-        for (let count = 0; count <= str.length; count ++) {
-            if (str[count] == 'B') {
-                b_count ++;
-            }
-        }
-        return b_count;
-    }
-};
+// let countBs = str => {
+//     let b_count = 0;
+//     if(typeof str != 'string') {
+//         return "Please enter a string";
+//     } else {
+//         for (let count = 0; count <= str.length; count ++) {
+//             if (str[count] == 'B') {
+//                 b_count ++;
+//             }
+//         }
+//         return b_count;
+//     }
+// };
 
 // Next, write a function called countChar that behaves
 //  like countBs, except it takes a second argument that
@@ -64,13 +64,16 @@ function countChar(str, letter) {
     if (typeof str != 'string') {
         return "Please enter a string";
     } else {
-        str = str.toLowerCase();
         for (let count = 0; count <= str.length; count++) {
             if(str[count] == letter) {
-                str_count ++;
+                str_count += 1;
             }
         }
         return str_count;
     }
 
+};
+
+function countBs(string) {
+    return countChar(string, "B");
 }
