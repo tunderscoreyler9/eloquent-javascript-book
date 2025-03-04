@@ -23,14 +23,54 @@ const min = (a, b) => {
 // )
 // The function should accept a single parameter (a positive, whole number) and return a Boolean.
 
-let isEven = num => {
-    if( num == 0) {
-        return true;
-    } else if (num == 1) {
-        return false;
-    } else if (num < 0){
-        return isEven(-num)
+// let isEven = num => {
+//     if( num == 0) {
+//         return true;
+//     } else if (num == 1) {
+//         return false;
+//     } else if (num < 0){
+//         return isEven(-num)
+//     } else {
+//         return isEven(num - 2);
+//     }
+// };
+
+
+// Exercise 3:
+// Write a function called countBs that takes a string as its only argument and returns a number that indicates 
+// how many uppercase B characters there are in the string.
+
+let countBs = str => {
+    let b_count = 0;
+    if(typeof str != 'string') {
+        return "Please enter a string";
     } else {
-        return isEven(num - 2);
+        for (let count = 0; count <= str.length; count ++) {
+            if (str[count] == 'B') {
+                b_count ++;
+            }
+        }
+        return b_count;
     }
 };
+
+// Next, write a function called countChar that behaves
+//  like countBs, except it takes a second argument that
+//  indicates the character that is to be counted (rather
+//  than counting only uppercase B characters). Rewrite
+//  countBs to make use of this new function.
+function countChar(str, letter) {
+    let str_count = 0;
+    if (typeof str != 'string') {
+        return "Please enter a string";
+    } else {
+        str = str.toLowerCase();
+        for (let count = 0; count <= str.length; count++) {
+            if(str[count] == letter) {
+                str_count ++;
+            }
+        }
+        return str_count;
+    }
+
+}
