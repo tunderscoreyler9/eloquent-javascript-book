@@ -13,3 +13,24 @@ const min = (a, b) => {
         return null;
     }
 };
+
+// Exercise 2:
+
+// Define a recursive function isEven corresponding to this description (
+//      Zero is even.
+//      One is odd.
+//      For any other number N, its evenness is the same as N - 2.
+// )
+// The function should accept a single parameter (a positive, whole number) and return a Boolean.
+
+let isEven = num => {
+    if( num == 0) {
+        return true;
+    } else if (num == 1) {
+        return false;
+    } else if (num < 0){
+        return isEven(-num)
+    } else {
+        return isEven(num - 2);
+    }
+};
